@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.HouseDrawBA" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+    </style>
+
+    <style name="ToolbarColoredBackArrow" parent="Theme.HouseDrawBA">
+        <item name="android:textColorSecondary">@color/primaryColor</item>
+        <item name="android:textColorPrimary">@color/primaryColor</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="title"> </item>
+    </style>
+</resources>

@@ -1,0 +1,73 @@
+[versions]
+agp = "8.13.0"
+appUpdate = "2.1.0"
+autofittextview = "0.2.1"
+billing = "7.1.1"
+dexter = "6.2.3"
+firebaseAnalytics = "23.0.0"
+firebaseConfig = "23.0.0"
+firebaseCrashlytics = "20.0.0"
+firebaseMessaging = "25.0.0"
+glide = "5.0.4"
+inferAnnotation = "0.18.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.1"
+lifecycleExtensions = "2.2.0"
+lifecycleRuntime = "2.7.0"
+lottie = "6.6.7"
+material = "1.12.0"
+activity = "1.10.1"
+constraintlayout = "2.2.1"
+applovin = "13.4.0.0"
+facebook = "6.20.0.0"
+mintegral = "16.9.91.1"
+playServicesAds = "24.6.0"
+review = "2.0.2"
+sdpAndroid = "1.1.1"
+ultimatebarx = "0.8.1"
+googleGmsGoogleServices = "4.4.3"
+googleFirebaseCrashlytics = "3.0.5"
+kotlin = "2.2.0"
+coreKtx = "1.17.0"
+lifecycleViewmodelKtx = "2.2.0"
+
+[libraries]
+app-update = { module = "com.google.android.play:app-update", version.ref = "appUpdate" }
+autofittextview = { module = "me.grantland:autofittextview", version.ref = "autofittextview" }
+billing = { module = "com.android.billingclient:billing", version.ref = "billing" }
+dexter = { module = "com.karumi:dexter", version.ref = "dexter" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics", version.ref = "firebaseAnalytics" }
+firebase-config = { module = "com.google.firebase:firebase-config", version.ref = "firebaseConfig" }
+firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics", version.ref = "firebaseCrashlytics" }
+firebase-messaging = { module = "com.google.firebase:firebase-messaging", version.ref = "firebaseMessaging" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+infer-annotation = { module = "com.facebook.infer.annotation:infer-annotation", version.ref = "inferAnnotation" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime", version.ref = "lifecycleRuntime" }
+lifecycle-extensions = { module = "androidx.lifecycle:lifecycle-extensions", version.ref = "lifecycleExtensions" }
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+facebook = { module = "com.google.ads.mediation:facebook", version.ref = "facebook" }
+applovin = { module = "com.google.ads.mediation:applovin", version.ref = "applovin" }
+mintegral = { module = "com.google.ads.mediation:mintegral", version.ref = "mintegral" }
+play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "playServicesAds" }
+ultimatebarx = { module = "com.gitee.zackratos:UltimateBarX", version.ref = "ultimatebarx" }
+review = { module = "com.google.android.play:review", version.ref = "review" }
+sdp-android = { module = "com.intuit.sdp:sdp-android", version.ref = "sdpAndroid" }
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+google-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "googleFirebaseCrashlytics" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+

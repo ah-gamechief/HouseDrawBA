@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AiGetInputActivity"
+    android:background="@color/screenBgColor"
+    >
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryColor"
+        android:paddingTop="24dp"
+        app:title="Sketch to Ai"
+        app:navigationIcon="@drawable/arrow_back"
+        app:navigationIconTint="@color/white"
+        app:titleTextColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/ad_view_container"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mcv_iv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.9"
+                app:layout_constraintDimensionRatio="1:1.2"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/ic_dotted_bg"
+                >
+
+                <LinearLayout
+                    android:id="@+id/ll_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0.3"
+                    >
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ic_floors"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/Black_Eel"
+                        android:layout_gravity="center"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/cv_credits"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="Choose your house model to continue"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textColor="@color/Black_Eel"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        />
+
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/cameraBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_50sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/galleryBtn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintWidth_percent="0.8"
+                    android:backgroundTint="@color/primaryColor"
+                    app:cornerRadius="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:textAllCaps="false"
+                    android:text="Choose from Camera"
+                    android:textColor="@color/white"
+                    app:icon="@drawable/ic_camera"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/white"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/galleryBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_50sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_top"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintWidth_percent="0.8"
+                    app:layout_constraintVertical_bias=".85"
+                    android:backgroundTint="@color/white"
+                    app:strokeColor="@color/grayTrpColor"
+                    app:strokeWidth="@dimen/_1sdp"
+                    app:cornerRadius="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:textAllCaps="false"
+                    android:text="Choose from Gallery"
+                    android:textColor="@color/Black_Eel"
+                    app:icon="@drawable/ic_gallery"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/Black_Eel"
+                    />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:visibility="gone"
+                    />
+
+                <ImageView
+                    android:id="@+id/closeImg"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:adjustViewBounds="true"
+                    android:padding="8dp"
+                    android:src="@drawable/close_white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white"
+                    android:visibility="gone"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/circle_bg_white"
+                    android:backgroundTint="#98000000"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cv_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/mcv_iv"
+                app:layout_constraintEnd_toEndOf="@+id/mcv_iv"
+                app:layout_constraintTop_toBottomOf="@+id/mcv_iv"
+                android:padding="@dimen/_8sdp"
+                >
+                <TextView
+                    android:id="@+id/tv_n1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="Select Style"
+                    android:textColor="@color/Black_Eel"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcv_room_mode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_n1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/mcv_room_color"
+                    app:layout_constraintWidth_percent="0.5"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="@color/white"
+                    app:strokeWidth="0dp"
+                    app:cardCornerRadius="@dimen/_7sdp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/_5sdp"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        >
+                        <me.grantland.widget.AutofitTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Room Type"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            />
+
+                        <me.grantland.widget.AutofitTextView
+                            android:id="@+id/tv_room_mode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Keep Structure"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="20dp"
+                            android:lines="1"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:textColor="@color/gnt_gray"
+                            android:textSize="14sp"
+                            />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:src="@drawable/ic_arrow_down"
+                        android:adjustViewBounds="true"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcv_room_color"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/mcv_room_mode"
+                    app:layout_constraintBottom_toBottomOf="@+id/mcv_room_mode"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/mcv_room_mode"
+                    app:layout_constraintWidth_percent="0.5"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="@color/white"
+                    app:strokeWidth="0dp"
+                    app:cardCornerRadius="@dimen/_7sdp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/_5sdp"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        >
+                        <me.grantland.widget.AutofitTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Color Palette"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            />
+
+                        <me.grantland.widget.AutofitTextView
+                            android:id="@+id/tv_room_color"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Blue"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="20dp"
+                            android:lines="1"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:textColor="@color/gnt_gray"
+                            android:textSize="14sp"
+                            />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:src="@drawable/ic_arrow_down"
+                        android:adjustViewBounds="true"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nextBtn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_44sdp"
+                app:layout_constraintTop_toBottomOf="@+id/cv_style"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.7"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:backgroundTint="@color/primaryColor"
+                app:cornerRadius="@dimen/_20sdp"
+                android:alpha="0.3"
+                android:paddingVertical="@dimen/_8sdp"
+                android:text="Let's start Ai Magic"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:icon="@drawable/ic_magic"
+                app:iconTint="@color/white"
+                app:iconGravity="textStart"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/ad_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

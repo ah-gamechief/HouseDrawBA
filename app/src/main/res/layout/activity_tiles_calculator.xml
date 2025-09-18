@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.TilesCalculatorActivity"
+    android:background="@color/white"
+    >
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Calculate Tiles"
+        android:paddingTop="24dp"
+        android:background="@color/primaryColor"
+        app:titleTextColor="@color/white"
+        app:navigationIconTint="@color/white"
+        app:navigationIcon="@drawable/arrow_back"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/ad_view_container"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/iv_room"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.3"
+                android:adjustViewBounds="true"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/tile_2d_icon"
+                android:padding="@dimen/_15sdp"
+                app:tint="@color/white"
+                android:background="@drawable/dsh_7_bg"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_room"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_room"
+                android:text="With standard dimensions of Brick Size\n9 inch x 3 inch x 4.5 inch."
+                android:textSize="12sp"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/Black_Eel"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                app:layout_constraintWidth_percent="0.5"
+                app:layout_constraintVertical_bias="0.2"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/et_price"
+                app:layout_constraintStart_toStartOf="@+id/et_price"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:text="Price/Sqrft"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/Black_Eel"
+                />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/iv_room"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent="0.4"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:hint="Price/Square Feet"
+                android:textColorHint="@color/grayTrpColor"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/Black_Eel"
+                android:inputType="numberDecimal"
+                android:background="@drawable/ert_bg"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/etWidth"
+                app:layout_constraintStart_toStartOf="@+id/etWidth"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:text="Width"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/Black_Eel"
+                />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etWidth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/et_price"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent="0.4"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:hint="Width in Feet"
+                android:textColor="@color/Black_Eel"
+                android:textColorHint="@color/grayTrpColor"
+                android:inputType="numberDecimal"
+                android:padding="@dimen/_10sdp"
+                android:background="@drawable/ert_bg"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/et_height"
+                app:layout_constraintStart_toStartOf="@+id/et_height"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:text="Height"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/Black_Eel"
+                />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_height"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/et_price"
+                app:layout_constraintStart_toEndOf="@+id/etWidth"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.4"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:hint="Height in Feet"
+                android:textColor="@color/Black_Eel"
+                android:textColorHint="@color/grayTrpColor"
+                android:inputType="numberDecimal"
+                android:padding="@dimen/_10sdp"
+                android:background="@drawable/ert_bg"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/cv_spinner"
+                app:layout_constraintStart_toStartOf="@+id/cv_spinner"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:text="Wall Thickness"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/Black_Eel"
+                android:visibility="gone"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/et_height"
+                app:layout_constraintWidth_percent="0.9"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_30sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardUseCompatPadding="true"
+                android:visibility="gone"
+                >
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_12sdp"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/calculateBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/cv_spinner"
+                app:layout_constraintWidth_percent="0.7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_30sdp"
+                app:cornerRadius="@dimen/_10sdp"
+                android:text="Calculate"
+                android:textColor="@color/white"
+                android:paddingVertical="@dimen/_9sdp"
+                android:textAllCaps="false"
+                app:backgroundTint="@color/primaryColor"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/ad_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

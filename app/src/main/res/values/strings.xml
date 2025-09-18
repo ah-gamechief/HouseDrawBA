@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">House Design 3D: Floor Drawing</string>
+
+    <string name="folder_to_save_imgs">HouseDesigns</string>
+
+    <string name="account_privacy_policy_url">https://sites.google.com/view/gamesversestudio/home</string>
+    <string name="app_account_url">https://play.google.com/store/apps/developer?id=Game+Verse</string>
+    <string name="app_url">https://play.google.com/store/apps/details?id=com.ba.modernhouse.design3d.houseplan.drawhouse.floorplan</string>
+
+    <string name="by_tapping_lets_start_you_indicate">By tapping “Continue” ,you indicate that you have read and agree to our <font fgcolor='#0066ff'>Privacy Policy</font>.</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="your_text_color_will_look_like_this">Your Text color will look like this</string>
+    <string name="full_hd_1920px">Full HD (1920px)</string>
+    <string name="auto_device_screen">Auto (Device Screen)</string>
+    <string name="hd_1080px">HD (1080px)</string>
+    <string name="hq_720px">HQ (720px)</string>
+    <string name="custom">Custom</string>
+    <string name="sd_480px">SD (480px)</string>
+    <string name="ok">OK</string>
+    <string name="quotes_sms">Quotes</string>
+    <string name="finish">Finish</string>
+    <string name="your_picture_is_successfully_saved">Your Picture is SuccessFully Saved.</string>
+    <string name="image_preview">Image Preview</string>
+    <string name="saved">Saved</string>
+    <string name="more_apps">More Apps</string>
+    <string name="remove_ads">Remove Ads</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="rate_app">Rate App</string>
+    <string name="more">More</string>
+    <string name="preview">Preview</string>
+    <string name="rate_this_app">Rate this App</string>
+    <string name="if_you_enjoy_playing_this_app_please_rate_5_stars_to_support_it">If you enjoy playing this app please rate 5 stars to support it</string>
+    <string name="please_wait">Please Wait</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="share_app">Share App</string>
+    <string name="exit">Exit</string>
+    <string name="modern_house_design">Modern <font fgcolor='#22a9c6'>House</font> Design</string>
+    <string name="design_your_space">Design your\n<font fgcolor='#22a9c6'>Space</font>, Build your</string>
+    <string name="build_your_dreams"><font fgcolor='#22a9c6'>Dreams</font></string>
+    <string name="my_creations">My Creations</string>
+
+
+</resources>

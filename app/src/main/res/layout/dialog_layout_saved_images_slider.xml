@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
+
+
+    <RelativeLayout
+        android:id="@+id/rel_vp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager_dialog_saved"
+            android:clipToPadding="false"
+            android:visibility="visible"
+            android:clipChildren="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        >
+        <ImageView
+            android:id="@+id/close_btn_sq_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_back"
+            app:tint="@color/white"
+            android:padding="12dp"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

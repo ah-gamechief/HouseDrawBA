@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mid_0"
+        android:title="@string/my_creations"
+        android:icon="@drawable/ic_saved"
+        />
+
+    <item
+        android:id="@+id/mid_1"
+        android:title="@string/rate_app"
+        android:visible="false"
+        />
+    <item
+        android:id="@+id/mid_2"
+        android:title="@string/more_apps"
+        android:icon="@drawable/more_apps_icon"
+        android:visible="false"
+        />
+    <item
+        android:id="@+id/mid_3"
+        android:title="@string/remove_ads"
+        android:icon="@drawable/remove_ad"
+        />
+    <item
+        android:id="@+id/mid_4"
+        android:title="@string/privacy_policy"
+        />
+    <item
+        android:id="@+id/mid_5"
+        android:title="@string/share_app"
+        android:visible="false"
+        />
+    <item
+        android:id="@+id/mid_6"
+        android:title="@string/exit"
+        />
+
+</menu>

@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "230793554345",
+    "project_id": "house-design-3d-eb9c7",
+    "storage_bucket": "house-design-3d-eb9c7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230793554345:android:8099a873ec118fb07afcb8",
+        "android_client_info": {
+          "package_name": "com.ba.modernhouse.design3d.houseplan.drawhouse.floorplan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARV5cEApJlgSa5K6WDV5NXVh1Nhw7EvkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      },
+      "admob_app_id": "ca-app-pub-7106940377104365~3034687751"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230793554345:android:b15f683d9980ff9e7afcb8",
+        "android_client_info": {
+          "package_name": "com.tal.pdfspeaker.mergepdf.pdftools.pdfreader.pdfviewer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARV5cEApJlgSa5K6WDV5NXVh1Nhw7EvkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

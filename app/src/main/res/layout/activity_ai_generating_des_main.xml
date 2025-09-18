@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screenBgColor"
+    tools:context=".activities.AiGeneratingDesMainActivity"
+    >
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryColor"
+        android:paddingTop="24dp"
+        app:title="Ai is Working"
+        app:navigationIcon="@drawable/arrow_back"
+        app:navigationIconTint="@color/white"
+        app:titleTextColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.google.android.ads.nativetemplates.TemplateView
+        android:id="@+id/nativeAdViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:gnt_template_type="@layout/gnt_small_template_view"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv_iv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintVertical_bias="0.6"
+        app:layout_constraintDimensionRatio="1:1.1"
+        app:cardBackgroundColor="@color/white"
+        app:strokeColor="@color/primaryColor"
+        app:strokeWidth="2dp"
+        app:cardCornerRadius="@dimen/_6sdp"
+        >
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:padding="@dimen/_5sdp"
+            />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/regenBtn"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_44sdp"
+        app:layout_constraintTop_toBottomOf="@+id/mcv_iv"
+        app:layout_constraintBottom_toTopOf="@+id/ad_view_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintVertical_bias="0.2"
+        android:backgroundTint="@color/primaryColor"
+        app:cornerRadius="@dimen/_20sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:textAllCaps="false"
+        android:visibility="gone"
+        android:text="Regenerate"
+        android:textColor="@color/white"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/viewBtn"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_44sdp"
+        app:layout_constraintTop_toBottomOf="@+id/regenBtn"
+        app:layout_constraintBottom_toTopOf="@+id/ad_view_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintVertical_bias="0.1"
+        android:backgroundTint="@color/Black_Eel"
+        app:cornerRadius="@dimen/_20sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:visibility="gone"
+        android:textAllCaps="false"
+        android:text="@string/preview"
+        android:textColor="@color/white"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cons_processing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        android:visibility="gone"
+        >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.5"
+            android:adjustViewBounds="true"
+            app:lottie_autoPlay="true"
+            app:lottie_repeatMode="reverse"
+            app:lottie_rawRes="@raw/ai_image"
+            app:lottie_loop="true"
+            app:lottie_speed="1"
+            />
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/tv_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/lottieView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.8"
+            android:textColor="@color/Black_Eel"
+            android:gravity="center"
+            android:text="Ai is Generating"
+            android:textStyle="bold"
+            />
+        <ProgressBar
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            app:layout_constraintStart_toEndOf="@+id/tv_heading"
+            app:layout_constraintTop_toTopOf="@+id/tv_heading"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_heading"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:progressTint="@color/Black_Eel"
+            android:indeterminateTint="@color/Black_Eel"
+            />
+
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/tv_sub_loading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_heading"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.7"
+            android:gravity="center"
+            android:textColor="@color/Black_Eel"
+            android:text="Please wait image is generating dont quite this screen while generating otherwise you\'ll lose your results."
+            android:textSize="11sp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_uploading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintVertical_bias="0.4"
+        android:orientation="vertical"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieView_nill_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_repeatMode="reverse"
+                app:lottie_rawRes="@raw/upload"
+                app:lottie_loop="true"
+                app:lottie_speed="1"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <me.grantland.widget.AutofitTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Black_Eel"
+            android:gravity="center"
+            android:text="Uplaoding Image"
+            android:textStyle="bold"
+            />
+
+        <me.grantland.widget.AutofitTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/Black_Eel"
+            android:text="Uploading Image Please wait..."
+            android:textSize="11sp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_error"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintHeight_percent="0.52"
+        app:layout_constraintVertical_bias="0.4"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            app:lottie_autoPlay="true"
+            app:lottie_repeatMode="reverse"
+            app:lottie_rawRes="@raw/error"
+            app:lottie_loop="true"
+            app:lottie_speed="1"
+            />
+
+        <me.grantland.widget.AutofitTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Black_Eel"
+            android:gravity="center"
+            android:text="Error Server is busy"
+            android:textStyle="bold"
+            />
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/tv_error_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/Black_Eel"
+            android:text="Please retry after 5 seconds, getting high requests"
+            android:textSize="11sp"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/retryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_44sdp"
+            android:backgroundTint="@color/Black_Eel"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cornerRadius="@dimen/_20sdp"
+            android:paddingVertical="@dimen/_5sdp"
+            android:paddingHorizontal="@dimen/_30sdp"
+            android:layout_gravity="center"
+            app:iconSize="@dimen/_14sdp"
+            android:alpha="0.4"
+            app:iconGravity="textStart"
+            app:iconPadding="10dp"
+            android:gravity="center"
+            app:icon="@drawable/ic_retry"
+            app:iconTint="@color/white"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:text="Retry"
+            />
+
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintStartGenerating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        android:paddingVertical="@dimen/_10sdp"
+        android:visibility="gone"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_credits"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_56sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:cardBackgroundColor="@color/Black_Eel"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="@dimen/_20sdp"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@+id/tv_credits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_n1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cv_credits"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Credits"
+            android:textColor="@color/Black_Eel"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/tv_none2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_n1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.8"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Buy Premium App to get unlimited  ai generations"
+            android:textColor="@color/Black_Eel"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/watchAdBtn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_56sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_none2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.8"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:backgroundTint="@color/primaryColor"
+            app:cornerRadius="@dimen/_25sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            android:textAllCaps="false"
+            android:text="Watch Ad to Continue"
+            android:textColor="@color/white"
+            app:icon="@drawable/arrow_forward"
+            app:iconGravity="end"
+            app:iconTint="@color/white"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nextBtn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_56sdp"
+            app:layout_constraintTop_toBottomOf="@+id/watchAdBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.8"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:backgroundTint="@color/white"
+            app:strokeColor="@color/gnt_gray"
+            app:strokeWidth="@dimen/_1sdp"
+            app:cornerRadius="@dimen/_25sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            android:textAllCaps="false"
+            android:text="Get Premium Subscriptions"
+            android:textColor="@color/Black_Eel"
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_24sdp"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toTopOf="@+id/nextBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/nextBtn"
+            app:layout_constraintEnd_toEndOf="@+id/nextBtn"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/crown"
+            app:lottie_loop="true"
+            app:lottie_speed="1"
+            android:elevation="4dp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/ad_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

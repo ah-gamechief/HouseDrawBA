@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+
+    <application
+        android:name=".adspackage.AppController"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HouseDrawBA"
+        tools:targetApi="31">
+        <activity
+            android:name=".activities.Ai3dPreviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AiPreviewResultActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.TakePermissionsActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.AiGeneratingDesMainActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.AiGetInputActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.AiHomeActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.ArDrawCameraActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.ArExploreActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.SelectExpDesActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.IntroScreensActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.PlasterCalculationActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.TilesCalculatorActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.PaintCalculateActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.SteelCalculatorActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.CalculationResultActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.BricksCalculatorActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.ExploreDesignsActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.MyCreationsActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.PreviewSavedActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.CreateNewMapActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.HomeActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".BaseActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.EntranceActivity"
+            android:exported="true"
+            android:screenOrientation="locked">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/ADMOB_APP_ID" />
+
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="locked"
+            android:theme="@style/Theme.HouseDrawBA" /> <!-- cache directory file provider paths -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths" />
+        </provider>
+    </application>
+
+</manifest>
